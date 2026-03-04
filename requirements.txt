@@ -1,4 +1,4 @@
 flask
-openai
+requests
+huggingface_hub
 twilio
-gunicorn
