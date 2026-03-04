@@ -1,0 +1,16 @@
+FROM python:3.9
+
+WORKDIR /code
+
+# Əvvəlcə kitabxanaları kopyalayırıq (Build sürətli olsun deyə)
+COPY requirements.txt .
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
+
+# Qalan bütün faylları kopyala
+COPY . .
+
+# Portu aç
+EXPOSE 7860
+
+# Tətbiqi başlat
+CMD ["python", "app.py"]
